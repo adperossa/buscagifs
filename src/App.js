@@ -18,7 +18,7 @@ export default class App extends Component {
   } 
 
   componentDidMount() {
-    fetch('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=24')
+    fetch('https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=24')
       .then(res => res.json())
       .then(responseData => this.setState({
         gifs: responseData.data,
@@ -28,7 +28,7 @@ export default class App extends Component {
   }
 
   ejecutarBusqueda = (query) => {
-    fetch(`http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${query}&limit=24`)
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=${query}&limit=24`)
       .then(res => res.json())
       .then(responseData => this.setState({
         gifs: responseData.data,
